@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragmeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode1"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode2"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode3"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode4"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode5"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode6"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg_red"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_weight="1" />
+
+                <com.abc.lzabcmode.ui.views.TEditText
+                    android:id="@+id/etCode7"
+                    android:layout_width="@dimen/dimen_36dp"
+                    android:layout_height="@dimen/dimen_36dp"
+                    android:background="@drawable/et_code_bg"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/color_636363"
+                    android:textSize="@dimen/dimen_20sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_36dp"
+                android:background="@color/transparent" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tvBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Add Number"
+            android:paddingLeft="@dimen/dimen_20dp"
+            android:paddingRight="@dimen/dimen_20dp"
+            android:background="@drawable/bt_bg"
+            android:paddingTop="@dimen/dimen_8dp"
+            android:paddingBottom="@dimen/dimen_8dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

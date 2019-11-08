@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/loadMoreEndLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_weight="2" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_05dp"
+            android:layout_weight="1"
+            android:background="#E2E7EC" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:text="没有更多了"
+            android:textColor="#C1CAD5"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_05dp"
+            android:layout_weight="1"
+            android:background="#E2E7EC" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvLoadEnd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="LoadEnd"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/barLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="@dimen/dimen_18dp"
+            android:layout_height="@dimen/dimen_18dp"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_8dp"
+            android:text="努力加载中..."
+            android:textColor="#C1CAD5"
+            android:textSize="@dimen/dimen_14sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvLoadFail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="加载失败"
+        android:textColor="#C1CAD5"
+        android:textSize="@dimen/dimen_14sp"
+        android:visibility="gone" />
+</LinearLayout>

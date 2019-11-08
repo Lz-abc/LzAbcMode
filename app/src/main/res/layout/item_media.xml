@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/dimen_15dp"
+    android:paddingRight="@dimen/dimen_16dp"
+    android:layout_marginBottom="@dimen/dimen_8dp"
+    android:paddingBottom="@dimen/dimen_10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_12dp">
+        <!--头像-->
+        <com.abc.baseloadview.views.RoundImageView
+            android:id="@+id/talent_news_head"
+            android:layout_width="@dimen/dimen_36dp"
+            android:layout_height="@dimen/dimen_36dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:lltype="circle"
+            android:src="@drawable/pic"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/talent_news_head"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_12dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/talent_news_name"
+                android:text="八百标兵"
+                android:textSize="@dimen/dimen_14sp"
+                android:textColor="@color/color_333333"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/talent_news_school"
+                android:layout_marginTop="@dimen/dimen_2dp"
+                android:text="湖南省·长沙市第一幼儿园"
+                android:textSize="@dimen/dimen_10sp"
+                android:textColor="@color/color_939393"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <!--音频-->
+    <LinearLayout
+        android:layout_width="@dimen/dimen_240dp"
+        android:layout_height="@dimen/dimen_40dp"
+        android:id="@+id/talent_news_record_ll"
+        android:background="@drawable/item_record_bg"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:paddingLeft="@dimen/dimen_16dp"
+        android:paddingRight="@dimen/dimen_16dp"
+        android:paddingBottom="@dimen/dimen_8dp"
+        android:paddingTop="@dimen/dimen_8dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/gifImgView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/item_record"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:id="@+id/talent_duration"
+            android:textColor="@color/white"
+            android:text="80s"
+            android:textSize="@dimen/dimen_16sp"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="@dimen/dimen_8dp"/>
+
+        <ProgressBar
+            android:layout_width="@dimen/dimen_21dp"
+            android:layout_height="@dimen/dimen_21dp"
+            android:id="@+id/talent_bar"
+            android:layout_gravity="center_vertical"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/talent_news_origin"
+        android:text="#快乐肥宅#"
+        android:textSize="@dimen/dimen_12sp"
+        android:textColor="@color/color_339CFF"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:paddingRight="@dimen/dimen_16dp"
+        android:paddingLeft="@dimen/dimen_16dp"
+        android:paddingTop="@dimen/dimen_4dp"
+        android:paddingBottom="@dimen/dimen_4dp"/>
+
+
+</LinearLayout>

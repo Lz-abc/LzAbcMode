@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.lucky.LuckyMainActivity">
+
+    <data>
+        <variable
+            name="luckyAdapter"
+            type="com.abc.lzabcmode.ui.adapter.LuckyListAdapter" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLucky"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            app:adapter="@{luckyAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            app:borderWidth="@dimen/dimen_0dp"
+            app:elevation="@dimen/dimen_0dp"
+            app:maxImageSize="@dimen/dimen_50dp"
+            app:backgroundTint="@color/blue"
+            android:scaleType="center"
+            app:fabSize="mini"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@mipmap/add"
+            android:layout_margin="@dimen/fab_margin" />
+    </FrameLayout>
+</layout>

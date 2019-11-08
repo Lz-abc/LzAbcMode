@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="dialog_bg">#66000000</color>
+    <color name="white">#ffffff</color>
+    <color name="FFFF">#E6FFFFFF</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_636363">#636363</color>
+    <color name="color_939393">#939393</color>
+    <color name="color_BDBDBD">#BDBDBD</color>
+    <color name="color_F6F6F6">#F6F6F6</color>
+    <color name="color_339CFF">#339CFF</color>
+    <color name="color_4EC6FF">#4EC6FF</color>
+    <color name="color_2D93FF">#2D93FF</color>
+    <color name="color_2382FF">#2382FF</color>
+    <color name="color_FF6F55">#FF6F55</color>
+    <color name="color_E6E6E6">#E6E6E6</color>
+    <color name="color_79C7FF">#79C7FF</color>
+    <color name="color_4C6569">#4C6569</color>
+    <color name="color_E2F0F2">#E2F0F2</color>
+    <color name="color_black_20">#4d000000</color>
+    <color name="gray_f7f7f7">#f7f7f7</color>
+    <color name="blue">#398def</color>
+    <color name="black1">#7A7E83</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ff808080</color>
+    <color name="color_888888">#888888</color>
+    <color name="color_2d3135">#2d3135</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_d4d4d4">#d4d4d4</color>
+    <color name="red_FF6F55">#FF6F55</color>
+    <color name="red_30FF6F55">#30FF6F55</color>
+    <color name="color_FFD11F">#FFD11F</color>
+    <color name="message_time_color">#bbbbbb</color>
+    <color name="gray_f6f6f6">#f6f6f6</color><!--进度条背景色-->
+    <color name="color_30bbbbb">#30bbbbbb</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f4f4f4">#F4F4F4</color>
+    <color name="color_296BB9">#296BB9</color>
+    <color name="color_FEE000">#FEE000</color>
+    <color name="color_534608">#534608</color>
+    <color name="color_FCCA00">#FCCA00</color>
+
+    <!-- 头像颜色 -->
+    <color name="color_91c7f5">#91c7f5</color>
+    <color name="color_fe8c81">#fe8c81</color>
+    <color name="color_63d8e1">#63d8e1</color>
+    <color name="color_fac46e">#fac46e</color>
+    <color name="color_99a9f6">#99a9f6</color>
+    <color name="color_ffa873">#ffa873</color>
+
+
+    <!--灰色-->
+    <color name="color_f6f6f6">#F6F6F6</color>
+    <color name="color_AEB5C0">#AEB5C0</color>
+    <color name="gray_bfbfbf">#bfbfbf</color><!--hint text-->
+
+    <!--蓝色-->
+    <color name="color_339cff">#339CFF</color>
+    <color name="blue_009ff0">#009ff0</color><!--按钮默认蓝色,本应用默认蓝色-->
+
+    <color name="color_eeeeee">#eeeeee</color>
+    <!-- 绿色 -->
+    <color name="green_10C56D">#10C56D</color><!--  绿色 -->
+    <color name="green_0CD674">#0CD674</color><!--  绿色 -->
+    <color name="common_background_color">#f6f6f6</color>
+
+    <color name="color_888a8c">#888a8c</color>
+    <color name="hot_news_title_color">#2d3135</color>
+
+    <color name="hot_news_origin_color">#bbbbbb</color>
+
+    <color name="category2_color1">#4fa8f1</color>
+    <color name="category2_color2">#ff8175</color>
+    <color name="category2_color3">#f7af3f</color>
+    <color name="category2_color4">#43d3dc</color>
+    <color name="category2_color5">#7b90f8</color>
+    <color name="category2_color6">#fe8e4a</color>
+
+</resources>
