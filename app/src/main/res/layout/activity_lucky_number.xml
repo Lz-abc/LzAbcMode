@@ -15,11 +15,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="@dimen/dimen_20dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <LinearLayout
@@ -38,7 +38,7 @@
                     android:inputType="number"
                     android:maxLength="2"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -54,8 +54,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -71,8 +71,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -88,8 +88,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -105,8 +105,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -122,8 +122,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -139,8 +139,8 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:textColor="@color/color_636363"
-                    android:textSize="@dimen/dimen_20sp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_14sp" />
 
             </LinearLayout>
 
@@ -151,28 +151,33 @@
                 android:background="@color/transparent" />
         </FrameLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
-
         <TextView
             android:id="@+id/tvBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Add Number"
-            android:paddingLeft="@dimen/dimen_20dp"
-            android:paddingRight="@dimen/dimen_20dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/bt_bg"
+            android:paddingLeft="@dimen/dimen_20dp"
             android:paddingTop="@dimen/dimen_8dp"
+            android:paddingRight="@dimen/dimen_20dp"
             android:paddingBottom="@dimen/dimen_8dp"
+            android:text="Add Number"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/fragmeLayout" />
+
+        <TextView
+            android:id="@+id/tvErrorMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="@dimen/dimen_16sp"
+            android:textColor="@color/red_FF6F55"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/fragmeLayout"
+            app:layout_constraintStart_toStartOf="@+id/fragmeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tvBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

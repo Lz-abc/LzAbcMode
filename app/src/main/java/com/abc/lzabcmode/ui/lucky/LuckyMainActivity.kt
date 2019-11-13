@@ -1,11 +1,13 @@
 package com.abc.lzabcmode.ui.lucky
 
+import android.app.Notification
 import android.content.Intent
 import com.abc.lzabcmode.R
 import com.abc.lzabcmode.base.BaseActivity
 import com.abc.lzabcmode.databinding.ActivityLuckyMainBinding
 import com.abc.lzabcmode.greendao.LuckyNumberData
 import com.abc.lzabcmode.ui.adapter.LuckyListAdapter
+import com.abc.lzabcmode.utils.BadgeUtil
 import com.abc.lzabcmode.utils.GreenDaoUtils
 
 import kotlinx.android.synthetic.main.activity_lucky_main.*
@@ -23,17 +25,6 @@ class LuckyMainActivity : BaseActivity<ActivityLuckyMainBinding>() {
 
     override fun init(dataBinding: ActivityLuckyMainBinding) {
         val list = GreenDaoUtils.queryAllData()
-        if (list==null||list.size==0) {
-            initMap()
-            for (index in 1..10) {
-                val luckyData = LuckyNumberData()
-                luckyData.issueNumber = "20191107"
-                luckyData.time = "2019/11/07 18:39"
-                luckyData.luckyArrays = createLucky()
-                list.add(luckyData)
-                GreenDaoUtils.addData(luckyData)
-            }
-        }
         adapter = LuckyListAdapter(list)
         dataBinding.luckyAdapter = adapter
         fabAdd.setOnClickListener {
@@ -45,6 +36,7 @@ class LuckyMainActivity : BaseActivity<ActivityLuckyMainBinding>() {
     private val blueLuckyList = ArrayList<Int>()
 
     private fun initMap() {
+        val redArrays=GreenDaoUtils.queryRedData(1)
         for (key in 1..33) {
             redLuckyList.add(key)
         }

@@ -5,8 +5,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.abc.lzabcmode.R
 import com.abc.lzabcmode.greendao.LuckyNumberData
+import com.abc.lzabcmode.utils.TimeUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import freemarker.template.utility.StringUtil
 
 /**
  * @name lz
@@ -31,15 +33,8 @@ class LuckyListAdapter(tabList: List<LuckyNumberData>?) :
                 for ((index, viewId) in viewList.withIndex()) {
                     helper.setText(viewId, "${array[index]}")
                 }
-                helper.setText(R.id.tvIssueNumber,"${item.issueNumber}")
-                helper.setText(R.id.tvTime,"${item.time}")
-
-//                var tvTab=it.getView<LinearLayout>(R.id.layout)
-//                if (it.adapterPosition%2==0){
-//                    tvTab.setBackgroundColor(Color.WHITE)
-//                }else{
-//                    tvTab.setBackgroundColor(Color.LTGRAY)
-//                }
+//                helper.setText(R.id.tvIssueNumber,"${item.issueNumber}")
+                helper.setText(R.id.tvTime,TimeUtils.getDateToString(item.time.toLong(),"yyyy-MM-dd"))
             }
         }
     }

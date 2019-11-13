@@ -22,10 +22,17 @@ public class LuckyNumberDataDao extends AbstractDao<LuckyNumberData, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property Id = new Property(0, long.class, "id", true, "_id");
+        public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Time = new Property(1, String.class, "time", false, "TIME");
-        public final static Property IssueNumber = new Property(2, String.class, "IssueNumber", false, "ISSUE_NUMBER");
+        public final static Property IssueNumber = new Property(2, String.class, "issueNumber", false, "ISSUE_NUMBER");
         public final static Property LuckyArrays = new Property(3, String.class, "luckyArrays", false, "LUCKY_ARRAYS");
+        public final static Property Number1 = new Property(4, int.class, "number1", false, "NUMBER1");
+        public final static Property Number2 = new Property(5, int.class, "number2", false, "NUMBER2");
+        public final static Property Number3 = new Property(6, int.class, "number3", false, "NUMBER3");
+        public final static Property Number4 = new Property(7, int.class, "number4", false, "NUMBER4");
+        public final static Property Number5 = new Property(8, int.class, "number5", false, "NUMBER5");
+        public final static Property Number6 = new Property(9, int.class, "number6", false, "NUMBER6");
+        public final static Property Number7 = new Property(10, int.class, "number7", false, "NUMBER7");
     }
 
 
@@ -41,10 +48,17 @@ public class LuckyNumberDataDao extends AbstractDao<LuckyNumberData, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"LUCKY_NUMBER_DATA\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"TIME\" TEXT NOT NULL ," + // 1: time
-                "\"ISSUE_NUMBER\" TEXT NOT NULL ," + // 2: IssueNumber
-                "\"LUCKY_ARRAYS\" TEXT NOT NULL );"); // 3: luckyArrays
+                "\"ISSUE_NUMBER\" TEXT NOT NULL ," + // 2: issueNumber
+                "\"LUCKY_ARRAYS\" TEXT NOT NULL ," + // 3: luckyArrays
+                "\"NUMBER1\" INTEGER NOT NULL ," + // 4: number1
+                "\"NUMBER2\" INTEGER NOT NULL ," + // 5: number2
+                "\"NUMBER3\" INTEGER NOT NULL ," + // 6: number3
+                "\"NUMBER4\" INTEGER NOT NULL ," + // 7: number4
+                "\"NUMBER5\" INTEGER NOT NULL ," + // 8: number5
+                "\"NUMBER6\" INTEGER NOT NULL ," + // 9: number6
+                "\"NUMBER7\" INTEGER NOT NULL );"); // 10: number7
     }
 
     /** Drops the underlying database table. */
@@ -56,43 +70,79 @@ public class LuckyNumberDataDao extends AbstractDao<LuckyNumberData, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, LuckyNumberData entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
         stmt.bindString(2, entity.getTime());
         stmt.bindString(3, entity.getIssueNumber());
         stmt.bindString(4, entity.getLuckyArrays());
+        stmt.bindLong(5, entity.getNumber1());
+        stmt.bindLong(6, entity.getNumber2());
+        stmt.bindLong(7, entity.getNumber3());
+        stmt.bindLong(8, entity.getNumber4());
+        stmt.bindLong(9, entity.getNumber5());
+        stmt.bindLong(10, entity.getNumber6());
+        stmt.bindLong(11, entity.getNumber7());
     }
 
     @Override
     protected final void bindValues(SQLiteStatement stmt, LuckyNumberData entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
+ 
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(1, id);
+        }
         stmt.bindString(2, entity.getTime());
         stmt.bindString(3, entity.getIssueNumber());
         stmt.bindString(4, entity.getLuckyArrays());
+        stmt.bindLong(5, entity.getNumber1());
+        stmt.bindLong(6, entity.getNumber2());
+        stmt.bindLong(7, entity.getNumber3());
+        stmt.bindLong(8, entity.getNumber4());
+        stmt.bindLong(9, entity.getNumber5());
+        stmt.bindLong(10, entity.getNumber6());
+        stmt.bindLong(11, entity.getNumber7());
     }
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }    
 
     @Override
     public LuckyNumberData readEntity(Cursor cursor, int offset) {
         LuckyNumberData entity = new LuckyNumberData( //
-            cursor.getLong(offset + 0), // id
+            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.getString(offset + 1), // time
-            cursor.getString(offset + 2), // IssueNumber
-            cursor.getString(offset + 3) // luckyArrays
+            cursor.getString(offset + 2), // issueNumber
+            cursor.getString(offset + 3), // luckyArrays
+            cursor.getInt(offset + 4), // number1
+            cursor.getInt(offset + 5), // number2
+            cursor.getInt(offset + 6), // number3
+            cursor.getInt(offset + 7), // number4
+            cursor.getInt(offset + 8), // number5
+            cursor.getInt(offset + 9), // number6
+            cursor.getInt(offset + 10) // number7
         );
         return entity;
     }
      
     @Override
     public void readEntity(Cursor cursor, LuckyNumberData entity, int offset) {
-        entity.setId(cursor.getLong(offset + 0));
+        entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setTime(cursor.getString(offset + 1));
         entity.setIssueNumber(cursor.getString(offset + 2));
         entity.setLuckyArrays(cursor.getString(offset + 3));
+        entity.setNumber1(cursor.getInt(offset + 4));
+        entity.setNumber2(cursor.getInt(offset + 5));
+        entity.setNumber3(cursor.getInt(offset + 6));
+        entity.setNumber4(cursor.getInt(offset + 7));
+        entity.setNumber5(cursor.getInt(offset + 8));
+        entity.setNumber6(cursor.getInt(offset + 9));
+        entity.setNumber7(cursor.getInt(offset + 10));
      }
     
     @Override
@@ -112,7 +162,7 @@ public class LuckyNumberDataDao extends AbstractDao<LuckyNumberData, Long> {
 
     @Override
     public boolean hasKey(LuckyNumberData entity) {
-        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
+        return entity.getId() != null;
     }
 
     @Override

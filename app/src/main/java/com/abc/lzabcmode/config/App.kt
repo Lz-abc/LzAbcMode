@@ -1,6 +1,7 @@
 package com.abc.lzabcmode.config
 
 import android.app.Application
+import com.abc.httplibs.HttpConfig
 import com.abc.lzabcmode.greendao.DaoMaster
 import com.abc.lzabcmode.greendao.DaoSession
 import org.greenrobot.greendao.query.QueryBuilder
@@ -23,6 +24,11 @@ class App : Application() {
         super.onCreate()
         sApp = this
         initGreenDao()
+        initHttpsConfig()
+    }
+
+    private fun initHttpsConfig(){
+        HttpConfig.init(this,"",true,null)
     }
 
     /**

@@ -46,6 +46,31 @@ public class GreenDaoUtils {
 
 
     /**
+     * 查询红球包含指定数值的数据
+     * @return
+     */
+    public static List<LuckyNumberData> queryRedData(int number) {
+        LuckyNumberDataDao daoSession = App.StaticParams.getApp().getDaoSession().getLuckyNumberDataDao();
+        return daoSession.queryBuilder().whereOr(LuckyNumberDataDao.Properties.Number1.eq(number),
+                LuckyNumberDataDao.Properties.Number2.eq(number),
+                LuckyNumberDataDao.Properties.Number3.eq(number),
+                LuckyNumberDataDao.Properties.Number4.eq(number),
+                LuckyNumberDataDao.Properties.Number5.eq(number),
+                LuckyNumberDataDao.Properties.Number6.eq(number)
+        ).list();
+    }
+
+    /**
+     * 查询蓝球包含指定数值的数据
+     * @return
+     */
+    public static List<LuckyNumberData> queryBuleData(int number) {
+        LuckyNumberDataDao daoSession = App.StaticParams.getApp().getDaoSession().getLuckyNumberDataDao();
+        return daoSession.queryBuilder().where(LuckyNumberDataDao.Properties.Number7.eq(number)).list();
+    }
+
+
+    /**
      *  删除
      * @param taskData
      */
