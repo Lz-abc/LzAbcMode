@@ -8,11 +8,14 @@ import com.abc.lzabcmode.R
 import com.abc.lzabcmode.base.BaseActivity
 import com.abc.lzabcmode.databinding.ActivityMainBinding
 import com.abc.lzabcmode.ui.adapter.TabListAdapter
+import com.abc.lzabcmode.ui.fr.FrActivity
+import com.abc.lzabcmode.ui.fr.FrJavaActivity
+import com.abc.lzabcmode.ui.fr.FragmentTabActivity
 import com.abc.lzabcmode.ui.lucky.LuckyMainActivity
 import com.abc.lzabcmode.ui.media.MediaPlayerListActivity
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.gyf.immersionbar.ImmersionBar
-import kotlinx.android.synthetic.main.base_title_layout.barView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -22,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun init(dataBinding: ActivityMainBinding) {
         ImmersionBar.with(this).init()
-        var adapter = TabListAdapter(listOf("MediaPlayerList", "LuckyNumber", "3", "4"))
+        var adapter = TabListAdapter(listOf("MediaPlayerList", "LuckyNumber", "FragmentTabActivity", "4"))
         dataBinding.tabAdapter = adapter
         adapter.onItemClickListener =
             BaseQuickAdapter.OnItemClickListener { _, _, position ->
@@ -34,7 +37,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         toActivity(LuckyMainActivity::class.java)
                     }
                     2 -> {
-
+                        toActivity(FrJavaActivity::class.java)
                     }
                 }
             }
