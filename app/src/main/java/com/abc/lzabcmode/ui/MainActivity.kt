@@ -9,8 +9,6 @@ import com.abc.lzabcmode.base.BaseActivity
 import com.abc.lzabcmode.databinding.ActivityMainBinding
 import com.abc.lzabcmode.ui.adapter.TabListAdapter
 import com.abc.lzabcmode.ui.fr.FrActivity
-import com.abc.lzabcmode.ui.fr.FrJavaActivity
-import com.abc.lzabcmode.ui.fr.FragmentTabActivity
 import com.abc.lzabcmode.ui.lucky.LuckyMainActivity
 import com.abc.lzabcmode.ui.media.MediaPlayerListActivity
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -37,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         toActivity(LuckyMainActivity::class.java)
                     }
                     2 -> {
-                        toActivity(FrJavaActivity::class.java)
+                        toActivity(FrActivity::class.java)
                     }
                 }
             }

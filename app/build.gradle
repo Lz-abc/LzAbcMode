@@ -6,15 +6,16 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 
-apply plugin: 'android-aspectjx' // fragment管理
 android {
-    compileSdkVersion 29
+
+    compileSdkVersion rootProject.ext.app.compileSdkVersion
+
     defaultConfig {
-        applicationId "com.abc.lzabcmode"
-        minSdkVersion 22
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.app.applicationId
+        minSdkVersion rootProject.ext.app.minSdkVersion
+        targetSdkVersion rootProject.ext.app.targetSdkVersion
+        versionCode rootProject.ext.app.versionCode
+        versionName rootProject.ext.app.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,12 +31,11 @@ android {
     }
 }
 greendao {
-    schemaVersion 1 //数据库版本号
-    daoPackage 'com.abc.lzabcmode.greendao'
-// 设置DaoMaster、DaoSession、Dao 包名
-    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录,请注意，这里路径用.不要用/
-//    generateTests false //设置为true以自动生成单元测试。
-//    targetGenDirTests 'src/main/java' //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
+    schemaVersion rootProject.ext.greendao.schemaVersion//数据库版本号
+    daoPackage rootProject.ext.greendao.daoPackage// 设置DaoMaster、DaoSession、Dao 包名
+    targetGenDir rootProject.ext.greendao.targetGenDir//设置DaoMaster、DaoSession、Dao目录,请注意，这里路径用.不要用/
+    //generateTests false //设置为true以自动生成单元测试。
+    //targetGenDirTests 'src/main/java' //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -71,8 +71,4 @@ dependencies {
     //数据库
     implementation 'org.greenrobot:greendao:3.2.2' // add library
     implementation 'org.greenrobot:greendao-generator:3.2.2'
-
-//    //fragment 管理
-    implementation 'com.justkiddingbaby:fragment-rigger:1.4.4'
-//    implementation project(path: ':rigger')
 }

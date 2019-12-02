@@ -1,32 +1,13 @@
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 ext {
+
     app = [
             appVerCode       : 1,
-            appVerName       : "1.1.0" + "-${releaseTime()}",
-            applicationId    : "com.yj.app",
-            versionNameSuffix: getCurrentVersionSuffix(),
-            minSdkVersion    : 14
-    ]
-
-    rigger = [
-            publishCode   : 12,
-            publishVersion: "1.4.4",
-            userOrg       : 'jkb',
-            groupId       : 'com.justkiddingbaby',
-            artifactId    : 'fragment-rigger',
-            desc          : 'A powerfual library powered by aop to manage Fragments.',
-            website       : 'https://github.com/JustKiddingBaby/FragmentRigger'
-    ]
-
-    android = [
-            minSdkVersion             : 14,
-            targetSdkVersion          : 27,
-            compileSdkVersion         : 27,
-            buildToolsVersion         : "27.0.3",
-            sourceCompatibilityVersion: JavaVersion.VERSION_1_8,
-            targetCompatibilityVersion: JavaVersion.VERSION_1_8
+            appVerName       : "1.0",
+            applicationId    : "com.abc.lzabcmode",
+            minSdkVersion    : 22,
+            targetSdkVersion : 29,
+            compileSdkVersion: 29
     ]
 
     dependencies = [
@@ -39,39 +20,14 @@ ext {
 
     store = [
             storeKey     : '../sign/JustKiddingBaby.jks',
-            storePassword: 'mimajiushiwo',
-            keyAlias     : 'JustKiddingBaby',
-            keyPassword  : 'mimajiushiwo'
+            storePassword: '',
+            keyAlias     : '',
+            keyPassword  : ''
     ]
-}
 
-def static releaseTime() {
-    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
-}
-
-def getCurrentVersionSuffix() {
-    def currentFlavor = getCurrentFlavor()
-    if (currentFlavor == "prod") {
-        return "-prod"
-    } else if (currentFlavor == "uat") {
-        return "-uat"
-    } else if (currentFlavor == "dev") {
-        return "-dev"
-    }
-}
-
-def getCurrentFlavor() {
-    String taskRequestName = getGradle().getStartParameter().getTaskRequests().toString()
-    Pattern pattern;
-    if (taskRequestName.contains("assemble")) {
-        pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
-    } else {
-        pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
-    }
-    Matcher matcher = pattern.matcher(taskRequestName)
-    if (matcher.find()) {
-        return matcher.group(1).toLowerCase()
-    } else {
-        return ""
-    }
+    greendao = [
+            schemaVersion : 1,
+            daoPackage    : 'com.abc.lzabcmode.greendao',
+            targetGenDir  : 'src/main/java'
+    ]
 }
